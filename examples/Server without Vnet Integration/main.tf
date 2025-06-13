@@ -72,7 +72,7 @@ resource "azurerm_mysql_flexible_server_firewall_rule" "custom_rules" {
   
   name                = each.key
   resource_group_name = local.resource_group_name
-  server_name         = module.mysql_public_server.mysql_server_name
+  server_name         = local.mysql_server_name
   start_ip_address    = each.value.start_ip_address
   end_ip_address      = each.value.end_ip_address
   
@@ -85,7 +85,7 @@ resource "azurerm_mysql_flexible_server_firewall_rule" "azure_services" {
   
   name                = "AllowAzureServices"
   resource_group_name = local.resource_group_name
-  server_name         = module.mysql_public_server.mysql_server_name
+  server_name         = local.mysql_server_name
   start_ip_address    = "0.0.0.0"
   end_ip_address      = "0.0.0.0"
   

@@ -77,6 +77,7 @@ output "connection_guide" {
     access_type = "Public"
     note        = "Connect from allowed IP ranges defined in firewall rules. SSL/TLS connection is required."
   }
+  sensitive = true
 }
 
 # Security Information
