@@ -3,13 +3,13 @@
 # Resource Group Variables
 
 //Location for MySQL Database
-variable "location" {
+variable "sql_location" {
   description = "The Azure region where all resources will be deployed"
   type        = string
 }
 
 //Resource Group Name for MySQL Database
-variable "resource_group_name" {
+variable "sql_resource_group_name" {
     description = "The name of the Azure Resource Group where the MySQL Database will be deployed"
     type        = string    
 }

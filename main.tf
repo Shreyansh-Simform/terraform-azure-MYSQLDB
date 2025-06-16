@@ -4,8 +4,8 @@
 
 # Resource Group Definition for MySQL Database
 resource "azurerm_resource_group" "rg" {
-  name     = var.resource_group_name
-  location = var.location
+  name     = var.sql_resource_group_name
+  location = var.sql_location
 }
 
 # Optional: VNet and Subnet (for private access)
@@ -29,7 +29,7 @@ resource "azurerm_virtual_network" "vnet" {
 resource "azurerm_subnet" "subnet" {
   name                 = var.mysql_subnet_name
   resource_group_name  = azurerm_resource_group.rg.name
-  virtual_network_name = azurerm_virtual_network.vnet[0].name
+  virtual_network_name = azurerm_virtual_network.vnet.name
   address_prefixes     = var.mysql_subnet_address_prefixes
   service_endpoints    = var.mysql_subnet_service_endpoints
   
